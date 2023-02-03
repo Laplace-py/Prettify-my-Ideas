@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import Accordion from './Accordion.js';
+import Title from './Title.js';
+import "./sub-items/sub-items.css";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	
+	function parseJSON() {
+		// get the json file
+		const json = require('./Ideas.json');
+		// parse the json file
+		const data = JSON.parse(JSON.stringify(json));
+		// return the parsed json file
+		return data;
+	}
+	return (
+		<div className="parent">
+				<Title />
+				{parseJSON().map((item) => <Accordion key={item.id} id={item.id} json={item} />)}
+		</div>
+	);
 }
 
 export default App;

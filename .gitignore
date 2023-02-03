@@ -21,3 +21,15 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+# { 
+#             "id":"I-001",
+#             "Title":"Web app to check and update this json file",
+#             "Links":["https://www.geeksforgeeks.org/nodejs/", "https://reactjs.org/docs/getting-started.html", "https://getbootstrap.com/docs/5.3/getting-started/download/"],
+#             "Description":"A web application that allows users to check and update this json file. The application is built using React, Bootstrap, Node and umap.",
+#             "Contributors":["Henric"],
+#             "Status":"In Progress",
+#             "Github":"to be added",
+#             "Difficulty":"Tutorial",
+#             "Observations":"None",
+#             "Priority":"High"
+#         },

@@ -1,0 +1,152 @@
+.description{
+    text-align: center;
+    
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+.edit{
+width:100%;
+}
+.In_Progress, .Done, .To_Do, .Delayed, .Not_Started,.Completed{
+    
+    padding: 0.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.In_Progress, .optionIn_Progress{
+    background-color: rgba(0, 0, 255,1);
+    color: azure;
+
+}
+.Done, .optionDone{
+    background-color: rgba(0, 255, 0,1);
+    color: black;
+}
+.Not_Started, .optionNot_Started{
+    background-color: rgba(200, 100, 50, 1);
+    color: white;
+}
+.To_Do, .optionTo_Do{
+    background-color: rgba(246, 255, 0,1);
+    color: black;
+}
+.Delayed, .optionDelayed{
+    background-color: rgba(255, 0, 0,1);
+    color: azure;
+}
+.Completed, .optionCompleted{
+    background-color: rgba(0, 255, 0,1);
+    color: whitesmoke;
+}
+.In_Progress:hover, .Done:hover, .To_Do:hover,.Delayed:hover,.Not_Started:hover,.Completed:hover{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    color: white;
+}
+.title{
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: aliceblue;
+    
+}
+.text{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    color: aliceblue;
+    border-radius: 0.5rem;
+    
+}
+.editItem{
+    margin:0.5rem;
+}
+.save{
+    width: 100%;
+    
+}
+.select {
+    width: 100%;
+    min-width: max-content;
+    max-width: 100%;
+    border: 1px solid var(--select-border);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-size: 1.25rem;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: #fff;
+    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
+}
+.label-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.sub-Text{
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: whitesmoke;
+}
+.Scrollable-sub-content{
+    display: block;
+    overflow-y: scroll;
+    max-height: 15rem;
+    min-height: 5rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    opacity: 1;
+    z-index: 99;
+    background-color: rgba(255,255,255,1);
+    border-width: .02rem;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.5);
+}
+.Scrollable-sub-content::-webkit-scrollbar-thumb, .Scrollable-sub-content::-webkit-scrollbar{
+    background: rgba(100,100,100,.5);
+    border-radius: 0.5rem;
+    cursor: grabbing;
+}
+.top{
+    background:repeating-linear-gradient(180deg, rgba(100,0,136,1) 0%, rgba(9,9,121,1) 0%, rgba(0,212,255,1) 100%);
+    position:fixed;
+    top: 5rem;
+    left: 5rem;
+    border-radius: 0.75rem;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 50%;
+    max-height: 70%;
+    overflow-y: scroll;
+    padding: 2rem;
+    opacity: 0.95;
+    z-index: 99;
+}
+.top::-webkit-scrollbar-thumb, .top::-webkit-scrollbar{
+    background: rgba(100,100,100,.5);
+    border-radius: 0.5rem;
+    cursor: grabbing;
+}
+.linkRow, .linkCol{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5rem;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    border-width: .01rem;
+    border-style: solid;
+    border-color: rgba(100,100,100,0.3);
+}
+.linkCol{
+    flex-direction:column;
+}
+.linkRow{
+    flex-direction: row;
+}
