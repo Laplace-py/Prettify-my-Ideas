@@ -12,7 +12,7 @@ app.post("/change", (req, res) => {
                 console.error(err);
                 return;
             };
-            console.log("File has been updated");
+            console.log("Item has been updated");
         });
     });
     res.end("ok");
@@ -37,17 +37,16 @@ app.post("/add", (req, res) => {
                     console.error(err);
                     return;
                 };
-                console.log("File has been updated");
+                console.log("Item has been added");
             });
         });
     });
     res.end("ok");
 });
-
 app.post("/delete", (req, res) => {
-    let body = "";
+    let body;
     req.on("data", chunk => {
-        body += chunk.toString();
+        body = Number(chunk);
     });
     req.on("end", () => {
         fs.readFile("./src/Ideas.json", (err, data) => {
@@ -56,14 +55,15 @@ app.post("/delete", (req, res) => {
                 return;
             };
             let json = JSON.parse(data);
-            json = json.filter(item => item.id !== JSON.parse(body).id);
+            console.log(body)
+            json = json.filter(item => item.id !== body);
             json = JSON.stringify(json);
             fs.writeFile("./src/Ideas.json", json, (err) => {
                     if (err) {
                         console.error(err);
                         return;
                     };
-                    console.log("File has been updated");
+                    console.log("Item has been deleted");
                 });
         });
     });

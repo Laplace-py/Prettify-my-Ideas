@@ -14,7 +14,7 @@ function App() {
 	}
 	return (
 		<div className="parent">
-				<Title data={parseJSON()}/>
+				<Title data={parseJSON().slice(-1)}/>
 				{parseJSON().map((item) => <Accordion key={item.id} id={item.id} json={item} />)}
 		</div>
 	);

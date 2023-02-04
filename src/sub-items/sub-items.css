@@ -13,9 +13,6 @@
     right: 0;
     margin: 0.7rem;
 }
-.edit{
-width:100%;
-}
 .In_Progress, .Done, .To_Do, .Delayed, .Not_Started,.Completed{
     
     padding: 0.5rem;
@@ -70,9 +67,12 @@ width:100%;
 .editItem{
     margin:0.5rem;
 }
-.save{
+.save, .edit, .max_widht{
     width: 100%;
     
+}
+.max_height{
+    height: 100%;
 }
 .select {
     width: 100%;

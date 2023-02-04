@@ -9,7 +9,7 @@ export default function AccordionItem(props) {
     const collapse_id = id + " collapse";
     const accordionExample_id = id + " accordionExample";
     const button_id = id + " button";
-
+    
     function handleClick() {
         document.getElementById(collapse_id).classList.toggle("show");
       }
@@ -18,9 +18,17 @@ export default function AccordionItem(props) {
         <div className="accordion" id={accordionExample_id}>
             <div className="accordion-item item">
                 <h2 className="accordion-header" id={heading_id}>
-                    <button className="accordion-button" onClick={handleClick} type="button" id={button_id}>
-                        {json.Title}
-                    </button>
+                    <div className='row'>
+                        <div className='col-md-11'>
+                            <button className="accordion-button" onClick={handleClick} type="button" id={button_id}>
+                                {json.Title}
+                            </button>
+                        </div>
+                        <div className='col-md-1'>
+                            
+                            <button type="button" onClick={()=>props.onClick_Delete(id)} className="btn btn-danger max_widht max_height">X</button>
+                        </div>
+                    </div>
                 </h2>
                 <div id={collapse_id} className="accordion-collapse collapse show" >
                     <div className="accordion-body">

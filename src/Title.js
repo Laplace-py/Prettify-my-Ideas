@@ -29,7 +29,7 @@ export default function Title(props) {
 		return (
 			<div>
 				{/* THis is not functional YET */}
-			<Add data={props.data} onClick={closeEdit}/>
+			<Add data={props.data[0]} onClick={closeEdit}/>
 			</div>
 		)
 	}

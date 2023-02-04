@@ -5,19 +5,15 @@ import StatusChangeItem from './sub-items/StatusChangeItem';
 import LinkRowItem from './sub-items/LinkRowItem';
 import AddLinkItem from './sub-items/AddLinkItem';
 import SaveButtonItem from './sub-items/SaveButtonItem';
+
 export default function Add(props) {
 	//const [id, setId] = useState("");
 	//const [all_ids,setAllIds] = useState([]);
-	let new_id = props.data.slice(-1)
-	new_id = new_id[0].id;
-	function generateId() {
-		let id = new_id;
-		let id_number = Number(id.substring(2,5));
-		id_number += 1;
-		id = id.substring(0,2) +"00"+ id_number;
-		return id;
-	}
-	let id = generateId();
+	const prevId = Number(props.data.id);
+	
+	let newId = prevId + 1;
+	// alert(newId);
+	let id = newId;
 	let id_title, id_description, id_status, id_links, id_save, id_link  = id;
 	id_title += " add title";
 	id_description += " add description";
@@ -86,7 +82,7 @@ export default function Add(props) {
 		let title = document.getElementById(id_title).value;
 		let links = savedLinks;
 		let info = {
-			Id: id,
+			id: id,
 			Title: title,
 			Description: description,
 			Status: status,

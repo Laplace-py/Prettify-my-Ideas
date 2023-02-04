@@ -11,10 +11,12 @@ export default class Accordion extends Component {
 		this.getChangedInfo = this.getChangedInfo.bind(this)
 		this.saveInJsonFile = this.saveInJsonFile.bind(this)		
 		this.changeIdeas = this.changeIdeas.bind(this)
+		this.deleteItem = this.deleteItem.bind(this)
 		this.state = {
 			editing: false,
 			id: props.id,
 			Info: {
+				id: props.id,
 				Title: props.json.Title,
 				Description: props.json.Description,
 				Status: props.json.Status,
@@ -58,13 +60,24 @@ export default class Accordion extends Component {
 		this.saveInJsonFile(info)
 		this.setState({ editing: false })
 	}
+	deleteItem(id) {
+		const url = '/delete';
+		const request = new Request(url, {
+			method: 'POST',
+			headers: new Headers({
+				'Content-Type': 'application/json'
+			}),
+			body: id
+		});
+		fetch(request)
+	}
 	render() {
 		const editing = this.state.editing;
 		const info = this.state.Info;
 		let screen;
 		if (!editing) {
 			
-			screen = <AccordionItem key={this.state.id+"ACItem"} id={this.state.id} json={info} onClick={this.openEdit} />
+			screen = <AccordionItem key={this.state.id+"ACItem"} id={this.state.id} json={info} onClick={this.openEdit} onClick_Delete={this.deleteItem}/>
 		}
 		else {
 			screen = <AccordionItemEdit key={this.state.id+"ACIEdit"} id={this.state.id} json={info} onClick={this.closeEdit} />
