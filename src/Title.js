@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
-import AccordionItemEdit from './AccordionItemEdit'
-export default function Title() {
+import Add from './Add';
+export default function Title(props) {
 	const [editing,setEditing] = useState(true);
 	function openEdit() {
 		setEditing(!editing);
@@ -29,7 +29,7 @@ export default function Title() {
 		return (
 			<div>
 				{/* THis is not functional YET */}
-				<AccordionItemEdit key={"ACIEdit"} id={"Title"} json={""} onClick={closeEdit}/>
+			<Add data={props.data} onClick={closeEdit}/>
 			</div>
 		)
 	}

@@ -8,7 +8,7 @@ export default function SaveButtonItem(props) {
     <div className="row editItem">
             <div className="col-md-10"></div>
             <div className="col-md-2">
-                <button type="button" key={key_save} id={id_save} onClick={props.onClick} className="save btn btn-danger">Save</button>
+                <button type="button" key={key_save} id={id_save} onClick={props.onClick} className="save btn btn-success">Save</button>
             </div>
     </div>
   )
