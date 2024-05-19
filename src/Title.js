@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Add from './Add';
+
 export default function Title(props) {
 	const [editing,setEditing] = useState(true);
 	function openEdit() {

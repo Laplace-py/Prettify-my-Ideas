@@ -12,6 +12,7 @@ export default class Accordion extends Component {
 		this.saveInJsonFile = this.saveInJsonFile.bind(this)		
 		this.changeIdeas = this.changeIdeas.bind(this)
 		this.deleteItem = this.deleteItem.bind(this)
+		this.exitEdit = this.exitEdit.bind(this)
 		this.state = {
 			editing: false,
 			id: props.id,
@@ -55,6 +56,9 @@ export default class Accordion extends Component {
 		data = JSON.stringify(data)
 		this.changeIdeas(data)
 	}
+	exitEdit() {
+		this.setState({ editing: false })
+	}
 	closeEdit(info) {
 		this.getChangedInfo(info)
 		this.saveInJsonFile(info)
@@ -80,13 +84,13 @@ export default class Accordion extends Component {
 			screen = <AccordionItem key={this.state.id+"ACItem"} id={this.state.id} json={info} onClick={this.openEdit} onClick_Delete={this.deleteItem}/>
 		}
 		else {
-			screen = <AccordionItemEdit key={this.state.id+"ACIEdit"} id={this.state.id} json={info} onClick={this.closeEdit} />
+			screen = <AccordionItemEdit key={this.state.id+"ACIEdit"} id={this.state.id} json={info} onExit={this.exitEdit} onClick={this.closeEdit} />
 		}
 
 		return (
-			<div>
+			<>
 			{screen}
-			</div>
+			</>
 		)
 	}
 }

@@ -84,6 +84,7 @@ export default function AccordionItemEdit(props) {
     
     return (
     <div className="container top">
+        <button type='button' className='btn btn-danger top-right' onClick={props.onExit}>Exit</button>
         <TitleChangeItem id={id_title} text={json.Title}/>
         <DescriptionChangeItem id={id_description} text={json.Description}/>
         <StatusChangeItem id={id_status} statuses={statuses}/>
